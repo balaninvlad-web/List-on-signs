@@ -16,15 +16,27 @@ typedef struct Node
 
 typedef struct
 {
-    Node* head;
-    Node* tail;
+    Node* dummy;
     size_t size;
 } LinkedList;
 
 LinkedList* ListCtor();
-Node* InsertNode (LinkedList* list, Node* current, int value);
+void ListDtor (LinkedList* list);
+
+Node* Insert_after_node(LinkedList* list, Node* after_node, int value);
 void PrintList (LinkedList* list);
 int DeleteNode (LinkedList* list, Node* node);
-void ListDtor (LinkedList* list);
+
+Node* GetHead(LinkedList* list);
+Node* GetTail(LinkedList* list);
+void VerifyList(LinkedList* list);
+
+void Create_log_file(LinkedList* list, const char* filename);
+void Create_head_log_file(LinkedList* list, FILE* dot_file);
+void Create_graph_node(LinkedList* list, FILE* dot_file);
+void Make_ranking(LinkedList* list, FILE* dot_file);
+void Make_arrow(LinkedList* list, FILE* dot_file);
+void Make_service_signs(LinkedList* list, FILE* dot_file);
+void Create_picture(void);
 
 #endif

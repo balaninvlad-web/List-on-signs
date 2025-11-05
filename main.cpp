@@ -2,27 +2,27 @@
 
 int main ()
 {
-    LinkedList* list = ListCtor();
+    LinkedList* List = ListCtor();
 
-    Node* node1 = InsertNode(list, NULL, 10);
+    Node* node1 = Insert_after_node(List, NULL, 10);
 
-    Node* node2 = InsertNode(list, node1, 20);
+    Node* node2 = Insert_after_node(List, node1, 20);
 
-    Node* node3 = InsertNode(list, NULL, 30);
+    Node* node3 = Insert_after_node(List, NULL, 30);
 
-    PrintList(list);
+    PrintList(List);
 
-    DeleteNode (list, node1);
+    DeleteNode (List, node1);
 
-    PrintList(list);
+    PrintList(List);
 
-    DeleteNode (list, list->head);
+    DeleteNode (List, GetHead(List));
 
-    PrintList(list);
+    PrintList(List);
 
-    DeleteNode (list, list->tail);
+    DeleteNode (List, GetTail(List));
 
-    PrintList(list);
+    PrintList(List);
 
-    ListDtor(list);
+    ListDtor(List);
 }
